@@ -36,6 +36,7 @@
             color: #2C3E50;
             font-size: 16px;
             margin-right: 10px;
+            box-sizing: border-box; /* Added to ensure equal spacing on both sides */
         }
         input[type="submit"] {
             background-color: #F1C40F;
@@ -73,7 +74,7 @@
 </head>
 <body>
     <h1>Google Search</h1>
-    <form action="http://3.111.170.38:5000/gsearch" method="post">
+    <form action="/gsearch" method="post">
         <input type="text" name="query" placeholder="Enter your search query" required>
         <input type="submit" value="Search">
     </form>

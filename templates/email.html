@@ -38,6 +38,7 @@
             background-color: #ECF0F1;
             color: #2C3E50;
             font-size: 16px;
+            box-sizing: border-box; /* Added to ensure equal spacing on both sides */
         }
         button {
             background-color: #F1C40F;
@@ -75,9 +76,6 @@
         
         <label for="subject">Subject:</label><br>
         <input type="text" id="subject" name="subject" required><br><br>
-        
-        <!--TODO:
-        normal txt hai to no bold no italic no hypertext-->
         
         <label for="body">Body:</label><br>
         <textarea id="body" name="body" required></textarea><br><br>

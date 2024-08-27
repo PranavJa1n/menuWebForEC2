@@ -64,7 +64,7 @@
 </head>
 <body>
     <h1>Geolocation</h1>
-    <form action="http://3.111.170.38:5000/geo" method="get">
+    <form action="http://127.0.0.1:5000/geo" method="get">
         <label for="location">Enter Location:</label>
         <input type="text" id="location" name="location" required>
         <button type="submit">Get Coordinates</button>
@@ -114,6 +114,7 @@
             background-color: #ECF0F1;
             color: #2C3E50;
             font-size: 16px;
+            box-sizing: border-box; /* Added to ensure equal spacing on both sides */
         }
         button {
             background-color: #F1C40F;
@@ -140,7 +141,7 @@
 </head>
 <body>
     <h1>Geolocation</h1>
-    <form method="post" action="http://3.111.170.38:5000/geo">
+    <form method="post" action="/geo">
         <label for="location">Enter Location:</label>
         <input type="text" id="location" name="location" required>
         <button type="submit">Get Coordinates</button>
