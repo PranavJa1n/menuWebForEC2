@@ -821,5 +821,16 @@ def simple():
         return render_template('simple.html', amt = amt)
     return render_template("simple.html")
 
+@app.route("/passgen", methods=["GET", "POST"])
+def passgen():
+    generated_pass = ""
+    if request.method == "POST":
+        passlength = int(request.form.get('passlength'))
+        characters = string.ascii_letters + string.digits + string.punctuation    
+        generated_pass = ""
+        for i in range(passlength):
+            generated_pass += random.choice(characters)
+    return render_template('passgen.html', password=generated_pass)
+
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=5000)
