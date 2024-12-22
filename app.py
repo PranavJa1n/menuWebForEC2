@@ -1,4 +1,4 @@
-from flask import Flask, request, send_file, redirect, url_for, render_template_string, render_template, Response, jsonify
+from flask import Flask, request, redirect, url_for, render_template_string, render_template, Response
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
@@ -23,7 +23,6 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 import boto3
 import os
-import signal
 import random
 import string
 
@@ -156,7 +155,7 @@ def gsearch():
     r = []
     if query:
         count = 0
-        for j in search(query, num_results=5):
+        for j in search(query):
             r.append(j)
             count += 1
             if count == 5:
@@ -832,6 +831,7 @@ def passgen():
         for i in range(passlength):
             generated_pass += random.choice(characters)
     return render_template('passgen.html', password=generated_pass)
+
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=5000)
